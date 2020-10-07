@@ -2,7 +2,7 @@
 
 namespace Sitepilot\Support;
 
-use Sitepilot\Modules\Branding;
+use Sitepilot\Components\Branding;
 use Sitepilot\Support\BeaverBuilder;
 
 final class BeaverUltimateAddons

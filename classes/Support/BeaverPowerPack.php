@@ -2,8 +2,8 @@
 
 namespace Sitepilot\Support;
 
-use Sitepilot\Modules\Branding;
 use BB_PowerPack_Admin_Settings;
+use Sitepilot\Components\Branding;
 use Sitepilot\Support\BeaverBuilder;
 
 final class BeaverPowerPack

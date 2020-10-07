@@ -2,11 +2,6 @@
 
 namespace Sitepilot;
 
-use Sitepilot\Support\Astra;
-use Sitepilot\Support\BeaverBuilder;
-use Sitepilot\Support\BeaverPowerPack;
-use Sitepilot\Support\BeaverUltimateAddons;
-
 final class Sitepilot
 {
     /**
@@ -21,6 +16,9 @@ final class Sitepilot
 
         /* Filters */
         add_filter('admin_enqueue_scripts', __CLASS__ . '::filter_load_admin_scripts');
+
+        /* Register Styles */
+        wp_register_style('sitepilot-modules-v1', SITEPILOT_URL . 'assets/dist/css/modules-v1.css', [], SITEPILOT_VERSION);
     }
 
     /**
@@ -44,13 +42,14 @@ final class Sitepilot
             add_filter('sp_beaver_ultimate_addons_branding', '__return_true');
         }
 
-        Modules\Update::init();
-        Modules\Support::init();
-        Modules\Branding::init();
-        Modules\Cleanup::init();
-        Modules\Menu::init();
-        Modules\Log::init();
-        Modules\ClientRole::init();
+        Components\Update::init();
+        Components\Support::init();
+        Components\Branding::init();
+        Components\Cleanup::init();
+        Components\Menu::init();
+        Components\Log::init();
+        Components\ClientRole::init();
+        Components\Shortcodes::init();
 
         Support\Astra::init();
         Support\BeaverBuilder::init();

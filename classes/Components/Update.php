@@ -1,6 +1,6 @@
 <?php
 
-namespace Sitepilot\Modules;
+namespace Sitepilot\Components;
 
 use Puc_v4_Factory;
 use Sitepilot\Model;

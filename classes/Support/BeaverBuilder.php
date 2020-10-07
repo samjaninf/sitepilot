@@ -2,7 +2,13 @@
 
 namespace Sitepilot\Support;
 
-use Sitepilot\Modules\Branding;
+use Sitepilot\Components\Branding;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\CtaModX1\SPCtaModX1;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\CtaModX2\SPCtaModX2;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\HeroModX1\SPHeroModX1;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\CardsModX1\SPCardsModX1;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\FeaturesModX1\SPFeaturesModX1;
+use Sitepilot\Support\BeaverBuilder\Modules\V1\FeaturesModX2\SPFeaturesModX2;
 
 final class BeaverBuilder
 {
@@ -41,6 +47,15 @@ final class BeaverBuilder
                         'bb-plugin/fl-builder.php' => self::get_branding_name(),
                         'bb-theme-builder/bb-theme-builder.php' => self::get_branding_name() . ' - Themer Add-on'
                     ]);
+                });
+
+                add_action('init', function () {
+                    SPCtaModX1::init();
+                    SPCtaModX2::init();
+                    SPHeroModX1::init();
+                    SPCardsModX1::init();
+                    SPFeaturesModX1::init();
+                    SPFeaturesModX2::init();
                 });
             }
 

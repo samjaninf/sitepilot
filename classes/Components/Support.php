@@ -1,6 +1,6 @@
 <?php
 
-namespace Sitepilot\Modules;
+namespace Sitepilot\Components;
 
 final class Support
 {

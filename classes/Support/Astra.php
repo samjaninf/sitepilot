@@ -2,7 +2,7 @@
 
 namespace Sitepilot\Support;
 
-use Sitepilot\Modules\Branding;
+use Sitepilot\Components\Branding;
 
 final class Astra
 {
