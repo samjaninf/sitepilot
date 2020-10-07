@@ -18,6 +18,7 @@ class SPHeroModX1 extends Module
         parent::__construct([
             'name' => __('Hero X1', 'sitepilot'),
             'category' => __('Hero', 'sitepilot'),
+            'description' => __('Sitepilot hero module.', 'sitepilot'),
             'group' => 'Sitepilot',
             'icon' => 'megaphone.svg',
             'editor_export' => true,

@@ -18,6 +18,7 @@ class SPCardsModX1 extends Module
         parent::__construct([
             'name' => __('Cards X1', 'sitepilot'),
             'category' => __('Cards', 'sitepilot'),
+            'description' => __('Sitepilot cards module.', 'sitepilot'),
             'group' => 'Sitepilot',
             'icon' => 'slides.svg',
             'editor_export' => true,

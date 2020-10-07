@@ -18,6 +18,7 @@ class SPFeaturesModX1 extends Module
         parent::__construct(array(
             'name' => __('Features X1', 'sitepilot'),
             'category' => __('Features', 'sitepilot'),
+            'description' => __('Sitepilot features module.', 'sitepilot'),
             'group' => 'Sitepilot',
             'icon' => 'star-filled.svg',
             'editor_export' => true,

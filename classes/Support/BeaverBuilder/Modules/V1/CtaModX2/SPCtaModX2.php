@@ -18,6 +18,7 @@ class SPCtaModX2 extends Module
         parent::__construct([
             'name' => __('CTA X2', 'sitepilot'),
             'category' => __('Call To Action', 'sitepilot'),
+            'description' => __('Sitepilot call to action module.', 'sitepilot'),
             'group' => 'Sitepilot',
             'icon' => 'button.svg',
             'editor_export' => true,
