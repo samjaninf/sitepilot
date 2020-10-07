@@ -1,6 +1,6 @@
 <?php
 
-use Sitepilot\Modules\Branding;
+use Sitepilot\Components\Branding;
 
 if (!class_exists('FLBuilderWhiteLabel')) {
 
