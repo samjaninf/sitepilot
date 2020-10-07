@@ -116,11 +116,7 @@ class SPFeaturesModX2 extends Module
                 'title' => 'Icon',
                 'properties' => [
                     'color' => 'theme_600',
-                    'font_size' => [
-                        'text-4xl',
-                        'text-5xl',
-                        "text-6xl"
-                    ],
+                    'typography' => '',
                     'margin_right' => [
                         'mr-6',
                         'mr-8',

@@ -104,21 +104,12 @@ class SPHeroModX1 extends Module
                 'title' => 'Title 1',
                 'properties' => ModuleProperties::h5([
                     'color' => 'theme_600',
-                    'letter_spacing' => 'tracking-wide',
-                    'text_transform' => 'uppercase',
-                    'font_weight' => 'font-bold',
                     'margin_bottom' => 'mb-2'
                 ])
             ],
             'title_2' => [
                 'title' => 'Title 2',
-                'properties' => ModuleProperties::h1([
-                    'font_size' => [
-                        'text-4xl',
-                        'text-5xl',
-                        'text-6xl',
-                    ]
-                ])
+                'properties' => ModuleProperties::h1()
             ],
             'card' => [
                 'title' => 'Card',
@@ -130,7 +121,6 @@ class SPHeroModX1 extends Module
                     'color' => 'ffffff',
                     'bg_color' => 'theme_600',
                     'border_radius' => 'rounded-t-lg',
-                    'text_alignment' => 'text-center',
                     'padding' => 'p-4',
                 ])
             ],
@@ -138,7 +128,6 @@ class SPHeroModX1 extends Module
                 'title' => 'Card Content',
                 'properties' => ModuleProperties::text_base([
                     'color' => 'gray_600',
-                    'text_alignment' => 'text-center',
                     'padding' => 'p-6'
                 ])
             ]

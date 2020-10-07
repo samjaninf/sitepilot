@@ -2,12 +2,12 @@
     <div id="sp-mod-<?= $id ?>" class="<?= $module->sp_class('section') ?>">
         <div class="max-w-2xl mx-auto text-center">
             <?php if (!empty($settings->title_1)) : ?>
-                <h1 class="title_1 <?= $module->sp_class('title_1') ?>">
+                <h1 class="title_1 font-extrabold tracking-tight leading-10 <?= $module->sp_class('title_1') ?>">
                     <?= $settings->title_1 ?>
                 </h1>
             <?php endif ?>
             <?php if (!empty($settings->title_2)) : ?>
-                <h3 class="title_2 <?= $module->sp_class('title_2') ?>">
+                <h3 class="title_2 font-semibold <?= $module->sp_class('title_2') ?>">
                     <?= $settings->title_2 ?>
                 </h3>
             <?php endif ?>

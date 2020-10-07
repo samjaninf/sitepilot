@@ -45,6 +45,15 @@ class ModuleFields
         ];
     }
 
+    static public function typography()
+    {
+        return [
+            'type' => 'typography',
+            'label' => 'Typography',
+            'responsive' => true
+        ];
+    }
+
     static public function font_size($default = '')
     {
         return [

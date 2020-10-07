@@ -2,6 +2,8 @@
 
 namespace Sitepilot\Support\BeaverBuilder;
 
+use FLBuilderCSS;
+use FLBuilderColor;
 use FLBuilderModule;
 
 class Module extends FLBuilderModule
@@ -49,7 +51,7 @@ class Module extends FLBuilderModule
         foreach ($fields[$field]['properties'] as $property => $default) {
             $option_classes = ['md' => [], 'lg' => []];
 
-            if (strpos($property, 'color') !== false) {
+            if (strpos($property, 'color') !== false || strpos($property, 'typography') !== false) {
                 continue;
             }
 
@@ -108,9 +110,8 @@ class Module extends FLBuilderModule
                 $color = $this->sp_setting($property_key, $field['properties']['color']);
 
                 if (!empty($color)) {
-                    $css .= ".fl-node-$id .$key {
-					color: #$color;
-				}";
+                    $css .= "#sp-mod-$id .$key {
+                    color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
                 }
             }
 
@@ -119,9 +120,8 @@ class Module extends FLBuilderModule
                 $color = $this->sp_setting($property_key, $field['properties']['hover_color']);
 
                 if (!empty($color)) {
-                    $css .= ".fl-node-$id .$key:hover, .fl-node-$id .group:hover .$key {
-					color: #$color;
-				}";
+                    $css .= "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key {
+					color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
                 }
             }
 
@@ -130,9 +130,8 @@ class Module extends FLBuilderModule
                 $color = $this->sp_setting($property_key, $field['properties']['bg_color']);
 
                 if (!empty($color)) {
-                    $css .= ".fl-node-$id .$key {
-					background-color: #$color;
-				}";
+                    $css .= "#sp-mod-$id .$key {
+                    background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
                 }
             }
 
@@ -141,10 +140,18 @@ class Module extends FLBuilderModule
                 $color = $this->sp_setting($property_key, $field['properties']['hover_bg_color']);
 
                 if (!empty($color)) {
-                    $css .= ".fl-node-$id .$key:hover, .fl-node-$id .group:hover .$key {
-					background-color: #$color;
-				}";
+                    $css .= "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key {
+                    background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
                 }
+            }
+
+            if (isset($field['properties']['typography'])) {
+                $property_key = $key . '_typography';
+                FLBuilderCSS::typography_field_rule(array(
+                    'settings' => $this->settings,
+                    'setting_name' => $property_key,
+                    'selector'    => "#sp-mod-$id .$key",
+                ));
             }
         }
 

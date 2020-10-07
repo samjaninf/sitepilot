@@ -141,7 +141,7 @@ class SPCardsModX1 extends Module
             'description' => [
                 'title' => 'Description',
                 'properties' => ModuleProperties::text_xl([
-                    'color' => 'gray_600',
+                    'color' => 'gray_600'
                 ])
             ],
             'grid' => [

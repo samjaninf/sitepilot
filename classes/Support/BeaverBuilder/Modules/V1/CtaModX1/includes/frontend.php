@@ -1,7 +1,7 @@
 <div class="sp-mod-v1">
     <div id="sp-mod-<?= $id ?>" class="<?= $module->sp_class('section') ?>">
         <div class="lg:flex lg:items-center lg:justify-between">
-            <h2 class="title_1 <?= $module->sp_class('title_1') ?>">
+            <h2 class="title_1 font-extrabold tracking-tight sm:text-4xl <?= $module->sp_class('title_1') ?>">
                 <?= $settings->title_1 ?>
                 <?php if (!empty($settings->title_2)) : ?>
                     <br>

@@ -52,12 +52,12 @@ class SPCtaModX2 extends Module
                             'title_1' => array(
                                 'type' => 'text',
                                 'label' => __('Title 1', 'sitepilot'),
-                                'default' => 'Ready to dive in?'
+                                'default' => 'Lorem ipsum dolor?'
                             ),
                             'title_2' => array(
                                 'type' => 'text',
                                 'label' => __('Title 2', 'sitepilot'),
-                                'default' => 'Start your free trial today.'
+                                'default' => 'Donec eget metus fringilla, fermentum dolor.'
                             ),
                         )
                     ),
@@ -67,7 +67,7 @@ class SPCtaModX2 extends Module
                             'btn_1' => array(
                                 'type' => 'text',
                                 'label' => __('Button Text', 'sitepilot'),
-                                'default' => 'Get started'
+                                'default' => 'Lorem ipsum'
                             ),
                             'btn_1_icon' => array(
                                 'type' => 'icon',
@@ -111,9 +111,7 @@ class SPCtaModX2 extends Module
             ],
             'title_2' => [
                 'title' => 'Title 2',
-                'properties' => ModuleProperties::h1([
-                    'font_weight' => 'font-medium'
-                ])
+                'properties' => ModuleProperties::h1()
             ],
             'btn_1' => [
                 'title' => 'Button',

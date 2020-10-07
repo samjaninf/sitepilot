@@ -137,9 +137,6 @@ class SPFeaturesModX1 extends Module
                 'title' => 'Title 1',
                 'properties' => ModuleProperties::h5([
                     'color' => 'theme_600',
-                    'letter_spacing' => 'tracking-wide',
-                    'text_transform' => 'uppercase',
-                    'font_weight' => 'font-bold',
                     'margin_bottom' => 'mb-2'
                 ])
             ],
@@ -168,21 +165,8 @@ class SPFeaturesModX1 extends Module
                     'bg_color' => 'theme_600',
                     'hover_bg_color' => 'theme_500',
                     'border_radius' => 'rounded-full',
-                    'width' => [
-                        'w-10',
-                        'w-11',
-                        'w-12'
-                    ],
-                    'height' => [
-                        'h-10',
-                        'h-11',
-                        'h-12'
-                    ],
-                    'font_size' => [
-                        'text-lg',
-                        'text-xl',
-                        'text-2xl'
-                    ]
+                    'padding' => 'p-3',
+                    'typography' => ''
                 ]
             ],
             'feature_title' => [

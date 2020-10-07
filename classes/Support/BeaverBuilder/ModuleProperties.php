@@ -75,9 +75,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h1', array_merge([
             'color' => '',
-            'font_weight' => 'font-extrabold',
-            'letter_spacing' => 'tracking-tight',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -85,9 +83,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h2', array_merge([
             'color' => '',
-            'font_weight' => 'font-extrabold',
-            'letter_spacing' => 'tracking-tight',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -95,9 +91,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h3', array_merge([
             'color' => '',
-            'font_weight' => 'font-bold',
-            'letter_spacing' => 'tracking-tight',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -105,9 +99,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h4', array_merge([
             'color' => '',
-            'font_weight' => 'font-semibold',
-            'letter_spacing' => 'tracking-tight',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -115,9 +107,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h5', array_merge([
             'color' => '',
-            'font_weight' => 'font-normal',
-            'letter_spacing' => 'tracking-tight',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -125,9 +115,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_xl', array_merge([
             'color' => '',
-            'font_size' => 'text-xl',
-            'line_height' => 'leading-7',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -135,9 +123,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_lg', array_merge([
             'color' => '',
-            'font_size' => 'text-lg',
-            'line_height' => 'leading-6',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
@@ -145,9 +131,7 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_base', array_merge([
             'color' => '',
-            'font_size' => 'text-base',
-            'line_height' => 'leading-6',
-            'text_transform' => 'normal-case'
+            'typography' => ''
         ], $merge));
     }
 
