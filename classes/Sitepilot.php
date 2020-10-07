@@ -18,7 +18,9 @@ final class Sitepilot
         add_filter('admin_enqueue_scripts', __CLASS__ . '::filter_load_admin_scripts');
 
         /* Register Styles */
-        wp_register_style('sitepilot-modules-v1', SITEPILOT_URL . 'assets/dist/css/modules-v1.css', [], SITEPILOT_VERSION);
+        add_action('wp_enqueue_scripts', function(){
+            wp_register_style('sitepilot-modules-v1', SITEPILOT_URL . 'assets/dist/css/modules-v1.css', [], SITEPILOT_VERSION);
+        });
     }
 
     /**
