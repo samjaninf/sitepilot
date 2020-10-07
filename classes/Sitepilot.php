@@ -38,6 +38,7 @@ final class Sitepilot
             add_filter('sp_beaver_builder_branding', '__return_true');
             add_filter('sp_beaver_builder_theme_branding', '__return_true');
             add_filter('sp_beaver_builder_filter_admin_settings_cap', '__return_true');
+            add_filter('sp_beaver_builder_modules_v1', '__return_true');
             add_filter('sp_beaver_power_pack_branding', '__return_true');
             add_filter('sp_beaver_ultimate_addons_branding', '__return_true');
         }

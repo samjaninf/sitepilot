@@ -48,7 +48,9 @@ final class BeaverBuilder
                         'bb-theme-builder/bb-theme-builder.php' => self::get_branding_name() . ' - Themer Add-on'
                     ]);
                 });
+            }
 
+            if (apply_filters('sp_beaver_builder_modules_v1', false)) {
                 add_action('init', function () {
                     SPCtaModX1::init();
                     SPCtaModX2::init();
