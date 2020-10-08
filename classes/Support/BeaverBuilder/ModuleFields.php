@@ -77,6 +77,7 @@ class ModuleFields
             'preview'    => array(
                 'type'     => 'css',
                 'selector' => '.' . $key,
+                'important' => true
             )
         ];
     }
@@ -90,6 +91,7 @@ class ModuleFields
             'preview'    => array(
                 'type'     => 'css',
                 'selector' => '.' . $key,
+                'important' => true
             )
         ];
     }
@@ -104,7 +106,8 @@ class ModuleFields
             'preview'    => array(
                 'type'     => 'css',
                 'selector' => '.' . $key,
-                'property' => 'margin'
+                'property' => 'margin',
+                'important' => true
             )
         ];
     }
@@ -119,7 +122,8 @@ class ModuleFields
             'preview'    => array(
                 'type'     => 'css',
                 'selector' => '.' . $key,
-                'property' => 'padding'
+                'property' => 'padding',
+                'important' => true
             )
         ];
     }
