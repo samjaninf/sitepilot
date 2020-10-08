@@ -12,7 +12,7 @@
         <?php endif ?>
         <ul class="mt-12 <?= $module->sp_class('grid') ?>">
             <?php foreach ($settings->cards as $card) : ?>
-                <li class="card group transform <?= $module->sp_class('card') ?>">
+                <li class="card group transform text-center <?= $module->sp_class('card') ?>">
                     <?php if (!empty($card->link)) : ?>
                         <a href="<?= $card->link ?>">
                         <?php endif ?>
