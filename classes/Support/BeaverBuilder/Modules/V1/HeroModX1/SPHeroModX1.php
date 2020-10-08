@@ -52,12 +52,12 @@ class SPHeroModX1 extends Module
                             'title_1' => array(
                                 'type' => 'text',
                                 'label' => __('Title 1', 'sitepilot'),
-                                'default' => 'Ready to dive in?'
+                                'default' => 'Lorem ipsum dolor?'
                             ),
                             'title_2' => array(
                                 'type' => 'text',
                                 'label' => __('Title 2', 'sitepilot'),
-                                'default' => 'Start your free trial today.'
+                                'default' => 'Nunc accumsan lorem non velit.'
                             ),
                         )
                     ),
@@ -104,7 +104,6 @@ class SPHeroModX1 extends Module
                 'title' => 'Title 1',
                 'properties' => ModuleProperties::h5([
                     'color' => 'theme_600',
-                    'margin_bottom' => 'mb-2'
                 ])
             ],
             'title_2' => [
@@ -120,15 +119,15 @@ class SPHeroModX1 extends Module
                 'properties' => ModuleProperties::h3([
                     'color' => 'ffffff',
                     'bg_color' => 'theme_600',
-                    'border_radius' => 'rounded-t-lg',
-                    'padding' => 'p-4',
+                    'border' => '',
+                    'padding' => ''
                 ])
             ],
             'card_content' => [
                 'title' => 'Card Content',
                 'properties' => ModuleProperties::text_base([
                     'color' => 'gray_600',
-                    'padding' => 'p-6'
+                    'padding' => ''
                 ])
             ]
         ];

@@ -134,9 +134,7 @@ class SPCardsModX1 extends Module
         return [
             'title' => [
                 'title' => 'Title',
-                'properties' => ModuleProperties::h2([
-                    'margin_bottom' => 'mb-4'
-                ])
+                'properties' => ModuleProperties::h2()
             ],
             'description' => [
                 'title' => 'Description',
@@ -146,9 +144,7 @@ class SPCardsModX1 extends Module
             ],
             'grid' => [
                 'title' => 'Grid',
-                'properties' => ModuleProperties::grid([
-                    'margin_top' => 'mt-12'
-                ])
+                'properties' => ModuleProperties::grid()
             ],
             'card' => [
                 'title' => 'Card',
@@ -162,7 +158,7 @@ class SPCardsModX1 extends Module
                 'title' => 'Card Image',
                 'properties' => [
                     'bg_color' => 'gray_200',
-                    'border_radius' => 'rounded-t-lg',
+                    'border' => '',
                     'height' => [
                         'h-48',
                         'h-40',
@@ -173,14 +169,13 @@ class SPCardsModX1 extends Module
             'card_content' => [
                 'title' => 'Card Content',
                 'properties' => [
-                    'padding' => 'p-6'
+                    'padding' => ''
                 ]
             ],
             'card_title' => [
                 'title' => 'Card Title',
                 'properties' => ModuleProperties::h4([
                     'hover_color' => 'ffffff',
-                    'padding_bottom' => 'pb-2'
                 ])
             ],
             'card_description' => [

@@ -49,13 +49,15 @@ class Module extends FLBuilderModule
         $classes = [];
 
         foreach ($fields[$field]['properties'] as $property => $default) {
-            $option_classes = ['md' => [], 'lg' => []];
-
-            if (strpos($property, 'color') !== false || strpos($property, 'typography') !== false) {
+            if (strpos($property, 'color') !== false || $property  == 'typography' || $property  == 'padding' || $property  == 'margin' || $property == 'border') {
                 continue;
             }
 
+            $responsive = false;
+            $option_classes = ['md' => [], 'lg' => []];
+
             if (method_exists(ModuleFields::class, $property)) {
+                $responsive = ModuleFields::$property()['responsive'] ?? false;
                 $option_classes = array_merge($option_classes, ModuleFields::$property()['option_classes'] ?? []);
             }
 
@@ -81,9 +83,13 @@ class Module extends FLBuilderModule
 
             $class = $this->sp_setting($key, $default_value);
 
+            if (!$responsive) {
+                $class = $lg_class;
+            }
+
             $classes[] = $class;
             if (isset($option_classes['md'][$md_class])) $classes[] = $option_classes['md'][$md_class];
-            if (isset($option_classes['lg'][$lg_class])) $classes[] = $class = $option_classes['lg'][$lg_class];
+            if (isset($option_classes['lg'][$lg_class])) $classes[] = $option_classes['lg'][$lg_class];
         }
 
         return implode(' ', $classes);
@@ -103,59 +109,85 @@ class Module extends FLBuilderModule
             return;
         }
 
-        $css = '';
         foreach ($fields as $key => $field) {
             if (isset($field['properties']['color'])) {
-                $property_key = $key . '_color';
-                $color = $this->sp_setting($property_key, $field['properties']['color']);
+                $color = $this->sp_setting($key . '_color', $field['properties']['color']);
 
                 if (!empty($color)) {
-                    $css .= "#sp-mod-$id .$key {
-                    color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
+                    echo "#sp-mod-$id .$key { color: " . FLBuilderColor::hex_or_rgb($color) . "; }\n";
                 }
             }
 
             if (isset($field['properties']['hover_color'])) {
-                $property_key = $key . '_hover_color';
-                $color = $this->sp_setting($property_key, $field['properties']['hover_color']);
+                $color = $this->sp_setting($key . '_hover_color', $field['properties']['hover_color']);
 
                 if (!empty($color)) {
-                    $css .= "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key {
-					color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
+                    echo "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key { color: " . FLBuilderColor::hex_or_rgb($color) . "; }\n";
                 }
             }
 
             if (isset($field['properties']['bg_color'])) {
-                $property_key = $key . '_bg_color';
-                $color = $this->sp_setting($property_key, $field['properties']['bg_color']);
+                $color = $this->sp_setting($key . '_bg_color', $field['properties']['bg_color']);
 
                 if (!empty($color)) {
-                    $css .= "#sp-mod-$id .$key {
-                    background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
+                    echo "#sp-mod-$id .$key { background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }\n";
                 }
             }
 
             if (isset($field['properties']['hover_bg_color'])) {
-                $property_key = $key . '_hover_bg_color';
-                $color = $this->sp_setting($property_key, $field['properties']['hover_bg_color']);
+                $color = $this->sp_setting($key . '_hover_bg_color', $field['properties']['hover_bg_color']);
 
                 if (!empty($color)) {
-                    $css .= "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key {
-                    background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }";
+                    echo "#sp-mod-$id .$key:hover, #sp-mod-$id .group:hover .$key { background-color: " . FLBuilderColor::hex_or_rgb($color) . "; }\n";
                 }
             }
 
             if (isset($field['properties']['typography'])) {
-                $property_key = $key . '_typography';
                 FLBuilderCSS::typography_field_rule(array(
                     'settings' => $this->settings,
+                    'setting_name' => $key . '_typography',
+                    'selector' => "#sp-mod-$id .$key",
+                ));
+            }
+
+            if (isset($field['properties']['border'])) {
+                FLBuilderCSS::border_field_rule(array(
+                    'settings' => $this->settings,
+                    'setting_name' =>  $key . '_border',
+                    'selector' => "#sp-mod-$id .$key",
+                ));
+            }
+
+            if (isset($field['properties']['padding'])) {
+                $property_key = $key . '_padding';
+                FLBuilderCSS::dimension_field_rule(array(
+                    'settings'     => $this->settings,
                     'setting_name' => $property_key,
-                    'selector'    => "#sp-mod-$id .$key",
+                    'selector'     => "#sp-mod-$id .$key",
+                    'props'        => array(
+                        'padding-top'    => $property_key . '_top',
+                        'padding-right'  => $property_key . '_right',
+                        'padding-bottom' => $property_key . '_bottom',
+                        'padding-left'   => $property_key . '_left',
+                    ),
+                ));
+            }
+
+            if (isset($field['properties']['margin'])) {
+                $property_key = $key . '_margin';
+                FLBuilderCSS::dimension_field_rule(array(
+                    'settings'     => $this->settings,
+                    'setting_name' => $property_key,
+                    'selector'     => "#sp-mod-$id .$key",
+                    'props'        => array(
+                        'margin-top'    => $property_key . '_top',
+                        'margin-right'  => $property_key . '_right',
+                        'margin-bottom' => $property_key . '_bottom',
+                        'margin-left'   => $property_key . '_left',
+                    ),
                 ));
             }
         }
-
-        return $css;
     }
 
     /**
@@ -183,7 +215,7 @@ class Module extends FLBuilderModule
                 $function = $property;
                 $field_key = $key . '_' . $property;
                 if (method_exists(ModuleFields::class, $function)) {
-                    $fields[$field_key] = ModuleFields::$function($default);
+                    $fields[$field_key] = ModuleFields::$function($key);
                 }
             }
 

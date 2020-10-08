@@ -137,14 +137,11 @@ class SPFeaturesModX1 extends Module
                 'title' => 'Title 1',
                 'properties' => ModuleProperties::h5([
                     'color' => 'theme_600',
-                    'margin_bottom' => 'mb-2'
                 ])
             ],
             'title_2' => [
                 'title' => 'Title 2',
-                'properties' => ModuleProperties::h2([
-                    'margin_bottom' => 'mb-4'
-                ])
+                'properties' => ModuleProperties::h2()
             ],
             'description' => [
                 'title' => 'Description',
@@ -154,9 +151,7 @@ class SPFeaturesModX1 extends Module
             ],
             'grid' => [
                 'title' => 'Grid',
-                'properties' => ModuleProperties::grid([
-                    'margin_top' => 'mt-12'
-                ])
+                'properties' => ModuleProperties::grid()
             ],
             'feature_icon' => [
                 'title' => 'Feature Icon',
@@ -164,16 +159,14 @@ class SPFeaturesModX1 extends Module
                     'color' => 'ffffff',
                     'bg_color' => 'theme_600',
                     'hover_bg_color' => 'theme_500',
-                    'border_radius' => 'rounded-full',
-                    'padding' => 'p-3',
+                    'border' => '',
+                    'padding' => '',
                     'typography' => ''
                 ]
             ],
             'feature_title' => [
                 'title' => 'Feature Title',
-                'properties' => ModuleProperties::h4([
-                    'margin_bottom' => 'mb-2'
-                ])
+                'properties' => ModuleProperties::h4()
             ],
             'feature_description' => [
                 'title' => 'Feature Description',

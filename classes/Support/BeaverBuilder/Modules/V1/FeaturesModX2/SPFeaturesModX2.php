@@ -117,11 +117,7 @@ class SPFeaturesModX2 extends Module
                 'properties' => [
                     'color' => 'theme_600',
                     'typography' => '',
-                    'margin_right' => [
-                        'mr-6',
-                        'mr-8',
-                        'mr-10'
-                    ],
+                    'margin' => ''
                 ]
             ],
             'title' => [

@@ -1,7 +1,7 @@
 <div class="sp-mod-v1">
     <div id="sp-mod-<?= $id ?>" class="md:text-center <?= $module->sp_class('section') ?>">
         <?php if (!empty($settings->title)) : ?>
-            <h2 class="title font-extrabold tracking-tight <?= $module->sp_class('title') ?>">
+            <h2 class="title mb-4 font-extrabold tracking-tight <?= $module->sp_class('title') ?>">
                 <?= $settings->title ?>
             </h2>
         <?php endif ?>
@@ -10,17 +10,17 @@
                 <?= $settings->description ?>
             </p>
         <?php endif ?>
-        <ul class="<?= $module->sp_class('grid') ?>">
+        <ul class="mt-12 <?= $module->sp_class('grid') ?>">
             <?php foreach ($settings->cards as $card) : ?>
                 <li class="card group transform <?= $module->sp_class('card') ?>">
                     <?php if (!empty($card->link)) : ?>
                         <a href="<?= $card->link ?>">
                         <?php endif ?>
-                        <div class="card_image overflow-hidden bg-cover <?= $module->sp_class('card_image') ?>" style="
+                        <div class="card_image overflow-hidden bg-cover rounded-t-lg <?= $module->sp_class('card_image') ?>" style="
                         <?= !empty($card->image_src) ? 'background-image: url(' . $card->image_src . ');' : '' ?>"></div>
-                        <div class="card_content <?= $module->sp_class('card_content') ?>">
+                        <div class="card_content p-6 <?= $module->sp_class('card_content') ?>">
                             <?php if (!empty($settings->title)) : ?>
-                                <h4 class="card_title tracking-tight font-semibold <?= $module->sp_class('card_title') ?>">
+                                <h4 class="card_title mb-2 tracking-tight font-semibold <?= $module->sp_class('card_title') ?>">
                                     <?= $card->title ?>
                                 </h4>
                             <?php endif ?>

@@ -75,7 +75,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h1', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -83,7 +85,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h2', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -91,7 +95,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h3', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -99,7 +105,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h4', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -107,7 +115,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_h5', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -115,7 +125,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_xl', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -123,7 +135,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_lg', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -131,7 +145,9 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_text_base', array_merge([
             'color' => '',
-            'typography' => ''
+            'hover_color' => '',
+            'typography' => '',
+            'margin' => ''
         ], $merge));
     }
 
@@ -154,6 +170,7 @@ final class ModuleProperties
                 'gap-y-8',
                 'gap-y-10'
             ],
+            'margin' => ''
         ], $merge));
     }
 
@@ -161,8 +178,10 @@ final class ModuleProperties
     {
         return apply_filters('sp_mod_props_card', array_merge([
             'bg_color' => 'ffffff',
-            'border_radius' => 'rounded-lg',
-            'shadow' => 'shadow-xl'
+            'hover_bg_color' => '',
+            'border' => '',
+            '_border' => 'rounded-lg',
+            '_shadow' => 'shadow-xl'
         ], $merge));
     }
 
@@ -173,21 +192,24 @@ final class ModuleProperties
             'hover_color' => 'ffffff',
             'bg_color' => 'theme_600',
             'hover_bg_color' => 'theme_500',
-            'font_size' => 'text-base',
-            'font_weight' => 'font-medium',
-            'line_height' => 'leading-6',
-            'text_transform' => 'normal-case',
-            'border_radius' => 'rounded-md',
-            'border_color' => 'border-transparent',
             'focus_outline' => 'focus:outline-none',
             'focus_box_shadow' => 'focus:shadow-outline',
             'transition' => 'transition',
             'transition_duration' => 'duration-150',
             'transition_timing' => 'ease-in-out',
-            'shadow' => 'shadow',
-            'padding_x' => 'px-6',
-            'padding_y' => 'py-3',
-            'display' => 'inline-block'
+            'display' => 'inline-block',
+            'typography' => '',
+            '_font_size' => 'text-base',
+            '_font_weight' => 'font-medium',
+            '_line_height' => 'leading-6',
+            'border' => '',
+            '_shadow' => 'shadow',
+            '_border_radius' => 'rounded-md',
+            '_border_color' => 'border-transparent',
+            'padding' => '',
+            '_padding_x' => 'px-6',
+            '_padding_y' => 'py-3',
+            'margin' => ''
         ], $merge));
     }
 

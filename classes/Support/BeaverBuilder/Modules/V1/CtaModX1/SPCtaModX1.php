@@ -52,12 +52,12 @@ class SPCtaModX1 extends Module
                             'title_1' => array(
                                 'type' => 'text',
                                 'label' => __('Title 1', 'sitepilot'),
-                                'default' => 'Ready to dive in?'
+                                'default' => 'Lorem ipsum dolor?'
                             ),
                             'title_2' => array(
                                 'type' => 'text',
                                 'label' => __('Title 2', 'sitepilot'),
-                                'default' => 'Start your free trial today.'
+                                'default' => 'Nunc accumsan lorem non velit.'
                             ),
                         )
                     ),

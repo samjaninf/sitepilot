@@ -105,9 +105,7 @@ class SPCtaModX2 extends Module
         return [
             'title_1' => [
                 'title' => 'Title 1',
-                'properties' => ModuleProperties::h2([
-                    'margin_bottom' => 'mb-8'
-                ])
+                'properties' => ModuleProperties::h2()
             ],
             'title_2' => [
                 'title' => 'Title 2',
@@ -115,14 +113,12 @@ class SPCtaModX2 extends Module
             ],
             'btn_1' => [
                 'title' => 'Button',
-                'properties' => ModuleProperties::btn_primary([
-                    'margin_top' => 'mt-8'
-                ])
+                'properties' => ModuleProperties::btn_primary()
             ],
             'btn_1_icon' => [
                 'title' => 'Button Icon',
                 'properties' => [
-                    'margin_left' => 'ml-2'
+                    'margin' => ''
                 ]
             ]
         ];
