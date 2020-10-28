@@ -16,7 +16,7 @@
             <?php endif; ?>
         </div>
 
-        <ul class="mt-12 <?= $module->sp_class('grid') ?>">
+        <ul class="<?php empty($settings->title_1) && empty($settings->title_2) && empty($settings->description) ? '' : 'mt-12' ?> <?= $module->sp_class('grid') ?>">
             <?php foreach ($settings->features as $feature) : ?>
                 <li class="group">
                     <div class="flex">
